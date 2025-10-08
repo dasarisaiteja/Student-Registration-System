@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f9fc;
+}
+header {
+  background: #003366;
+  color: #fff;
+  padding: 16px 0;
+  text-align: center;
+}
+main {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.09);
+}
+.nav-links {
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style-type: disc;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+.form-section, .table-section {
+  margin-bottom: 32px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form input, form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+form button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+form button:active {
+  background: #0055aa;
+}
+.error {
+  color: #d90429;
+  margin-top: 8px;
+}
+.table-container {
+  max-height: 350px;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.table-container.scroll-active {
+  overflow-y: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th, td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f1f1;
+}
+th {
+  background: #e0e7ef;
+}
+.actions button {
+  margin-right: 0.5em;
+  padding: 0.3em 0.7em;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  vertical-align: middle;
+}
+.edit-btn {
+  background: #d90429;
+}
+.edit-btn:hover {
+  background: #68a813;
+}
+.delete-btn {
+  background: #d90429;
+}
+.delete-btn:hover {
+  background: #81a500;
+}
+
+/* tablet */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  main {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 12px;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  table, thead, tbody, th, td, tr {
+    display: table-row-group;
+  }
+  th, td {
+    padding: 12px;
+  }
+  .actions button {
+    margin-right: 8px;
+  }
+}
+
+/*for modile*/
+@media only screen and (max-width: 640px) {
+  main {
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  tr {
+    margin-bottom: 1.5em;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: #e0e7ef;
+    text-align: left;
+  }
+  td {
+    border: none;
+    padding: 0.7em 0.2em;
+  }
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+  }
+}
